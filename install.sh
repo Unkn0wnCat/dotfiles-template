@@ -8,7 +8,7 @@
 
 # Define parameters.
 
-INSTALL_DIR=$HOME/Projects/dotfiles/testhome
+INSTALL_DIR=$HOME
 
 BACKUP_DIR_BASE=$INSTALL_DIR/dotfiles_backup
 
