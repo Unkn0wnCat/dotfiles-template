@@ -14,6 +14,12 @@ BACKUP_DIR_BASE=$INSTALL_DIR/dotfiles_backup
 
 BACKUP_DIR=$BACKUP_DIR_BASE/$(date +"%Y-%m-%d_%H-%M-%S")
 
+# Push current directory.
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd)"
+
+pushd $DIR > /dev/null
+
 # Figure out OS and OS-Version.
 
 if [ -f /etc/os-release ]; then
@@ -190,5 +196,5 @@ for f in ./scripts/post-install.d/*.sh; do
 done
 
 # Done!
-
+popd > /dev/null
 exit 0
